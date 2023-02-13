@@ -42,8 +42,8 @@ let usuario = prompt("Bienvenido a IronSpot ¿Estas registrado(registrado, no re
 while (usuario != "registrado" && usuario != "no registrado") {
     alert("¡No válido!");
     usuario = prompt("Ingrese si esta registrado:");
-}
 
+}
 
 
 let solicitar = prompt("¿Desea realizar alguna compra?(si o no)");
@@ -57,7 +57,7 @@ while (solicitar != "si" && solicitar != "no") {
 if (solicitar == "si") {
     elegir_producto = parseInt(prompt("Elija el producto que desea(numero): 1)-Escritorio - 2)-Mesa ratona - 3)-Juego de living - 4)-Rack Tv:"));
 } else if (solicitar == "no") {
-    alert("Gracias por visitarnos!!")
+    alert("Gracias por visitarnos!!");
 }
 
 
@@ -98,7 +98,7 @@ if (unidades < produ_escritorio.stock && elegir_producto == "1" && usuario == "r
     console.log("Total a pagar:", costo_total_escritorio - (precio_escritorio * unidades));
     lista_muebles[0].get_stock()
 } else if (unidades > produ_escritorio.stock && elegir_producto == "1") {
-    console.log("No tenemos stock del producto");
+    console.log("No contamos con la cantidad solicitada");
 } else if (usuario == "no registrado" && elegir_producto == "1") {
     console.log("Usted quiere:", unidades);
     console.log("No posee descuento")
@@ -114,7 +114,7 @@ if (unidades < produ_ratona.stock && elegir_producto == "2" && usuario == "regis
     console.log("Total a pagar:", costo_total_ratona - (precio_mesarat * unidades));
     lista_muebles[1].get_stock()
 } else if (unidades > produ_ratona.stock && elegir_producto == "2") {
-    console.log("No tenemos stock del producto");
+    console.log("No contamos con la cantidad solicitada");
 } else if (usuario == "no registrado" && elegir_producto == "2") {
     console.log("Usted quiere:", unidades);
     console.log("No posee descuento")
@@ -130,7 +130,7 @@ if (unidades < produ_juego.stock && elegir_producto == "3" && usuario == "regist
     console.log("Total a pagar:", costo_total_living - (precio_juego * unidades));
     lista_muebles[2].get_stock()
 } else if (unidades > produ_juego.stock && elegir_producto == "3") {
-    console.log("No tenemos stock del producto");
+    console.log("No contamos con la cantidad solicitada");
 } else if (usuario == "no registrado" && elegir_producto == "3") {
     console.log("Usted quiere:", unidades);
     console.log("No posee descuento")
@@ -146,7 +146,7 @@ if (unidades < produ_rack.stock && elegir_producto == "4" && usuario == "registr
     console.log("Total a pagar:", costo_total_rack - (precio_rack * unidades));
     lista_muebles[3].get_stock()
 } else if (unidades > produ_rack.stock && elegir_producto == "4") {
-    console.log("No tenemos stock del producto");
+    console.log("No contamos con la cantidad solicitada");
 } else if (usuario == "no registrado" && elegir_producto == "4") {
     console.log("Usted quiere:", unidades);
     console.log("No posee descuento")
