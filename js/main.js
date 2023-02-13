@@ -31,7 +31,7 @@ let produ_ratona = new Caracteristicas_muebles("Mesa ratona", 10500, 12)
 lista_muebles.push(produ_ratona);
 let produ_juego = new Caracteristicas_muebles("Juego de living", 14500, 13)
 lista_muebles.push(produ_juego);
-let produ_rack = new Caracteristicas_muebles("Rack Tv", 22500, 2);
+let produ_rack = new Caracteristicas_muebles("Rack Tv", 22500, 18);
 lista_muebles.push(produ_rack);
 
 
@@ -46,17 +46,19 @@ while (usuario != "registrado" && usuario != "no registrado") {
 
 
 let solicitar = prompt("¿Desea realizar alguna compra?(si o no)");
-
+let elegir_producto
 while (solicitar != "si" && solicitar != "no") {
     alert("Ingrese si o no");
     solicitar = prompt("¿Desea realizar alguna compra?(si o no)");
+
+    if (solicitar == "si") {
+        elegir_producto = parseInt(prompt("Elija el producto que desea(numero): 1)-Escritorio - 2)-Mesa ratona - 3)-Juego de living - 4)-Rack Tv:"));
+    } else if (solicitar == "no") {
+        alert("Gracias por visitarnos!! Vuelva pronto");
+        break
+    }
 }
-let elegir_producto
-if (solicitar == "si") {
-    elegir_producto = parseInt(prompt("Elija el producto que desea(numero): 1)-Escritorio - 2)-Mesa ratona - 3)-Juego de living - 4)-Rack Tv:"));
-} else if (solicitar == "no") {
-    alert("Gracias por visitarnos!! Vuelva pronto");
-}
+
 
 let precio_escritorio = muebles(lista_muebles[0].valor, usuario);
 let precio_mesarat = muebles(lista_muebles[1].valor, usuario);
