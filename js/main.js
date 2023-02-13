@@ -92,7 +92,7 @@ if (unidades < produ_escritorio.stock && elegir_producto == "1" && usuario == "r
     console.log("Tiene un descuento de:", precio_escritorio * unidades, "por estar registrado");
     console.log("Total a pagar:", costo_total_escritorio - (precio_escritorio * unidades));
     lista_muebles[0].get_stock()
-} else if (unidades > produ_escritorio.stock) {
+} else if (unidades > produ_escritorio.stock && elegir_producto == "1") {
     console.log("No tenemos stock del producto");
 } else if (usuario == "no registrado" && elegir_producto == "1") {
     console.log("Usted quiere:", unidades);
@@ -108,7 +108,7 @@ if (unidades < produ_ratona.stock && elegir_producto == "2" && usuario == "regis
     console.log("Tiene un descuento de:", precio_mesarat * unidades, "por estar registrado");
     console.log("Total a pagar:", costo_total_ratona - (precio_mesarat * unidades));
     lista_muebles[1].get_stock()
-} else if (unidades > produ_ratona.stock) {
+} else if (unidades > produ_ratona.stock && elegir_producto == "2") {
     console.log("No tenemos stock del producto");
 } else if (usuario == "no registrado" && elegir_producto == "2") {
     console.log("Usted quiere:", unidades);
@@ -124,7 +124,7 @@ if (unidades < produ_juego.stock && elegir_producto == "3" && usuario == "regist
     console.log("Tiene un descuento de:", precio_juego * unidades, "por estar registrado");
     console.log("Total a pagar:", costo_total_living - (precio_juego * unidades));
     lista_muebles[2].get_stock()
-} else if (unidades > produ_juego.stock) {
+} else if (unidades > produ_juego.stock && elegir_producto == "3") {
     console.log("No tenemos stock del producto");
 } else if (usuario == "no registrado" && elegir_producto == "3") {
     console.log("Usted quiere:", unidades);
@@ -140,7 +140,7 @@ if (unidades < produ_rack.stock && elegir_producto == "4" && usuario == "registr
     console.log("Tiene un descuento de:", precio_rack * unidades, "por estar registrado");
     console.log("Total a pagar:", costo_total_rack - (precio_rack * unidades));
     lista_muebles[3].get_stock()
-} else if (unidades > produ_rack.stock) {
+} else if (unidades > produ_rack.stock && elegir_producto == "4") {
     console.log("No tenemos stock del producto");
 } else if (usuario == "no registrado" && elegir_producto == "4") {
     console.log("Usted quiere:", unidades);
