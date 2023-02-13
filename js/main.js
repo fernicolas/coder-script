@@ -45,19 +45,21 @@ while (usuario != "registrado" && usuario != "no registrado") {
 }
 
 
+
 let solicitar = prompt("¿Desea realizar alguna compra?(si o no)");
 let elegir_producto
 while (solicitar != "si" && solicitar != "no") {
     alert("Ingrese si o no");
     solicitar = prompt("¿Desea realizar alguna compra?(si o no)");
-
-    if (solicitar == "si") {
-        elegir_producto = parseInt(prompt("Elija el producto que desea(numero): 1)-Escritorio - 2)-Mesa ratona - 3)-Juego de living - 4)-Rack Tv:"));
-    } else if (solicitar == "no") {
-        alert("Gracias por visitarnos!! Vuelva pronto");
-        break
-    }
 }
+
+
+if (solicitar == "si") {
+    elegir_producto = parseInt(prompt("Elija el producto que desea(numero): 1)-Escritorio - 2)-Mesa ratona - 3)-Juego de living - 4)-Rack Tv:"));
+} else if (solicitar == "no") {
+    alert("Gracias por visitarnos!!")
+}
+
 
 
 let precio_escritorio = muebles(lista_muebles[0].valor, usuario);
@@ -80,6 +82,7 @@ while (solicitar != "no") {
     }
     break
 }
+
 
 let unidades = parseInt(prompt("¿Cuantas unidades quieres?:"));
 let costo_total_escritorio = unidades * lista_muebles[0].valor;
