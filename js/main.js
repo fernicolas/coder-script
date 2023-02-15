@@ -25,9 +25,6 @@ class Caracteristicas_muebles {
     get_stock() {
         console.log("Quedan:", this.stock - unidades, "unidades")
     }
-    costo_total() {
-        console.log("El costo es de:", producto_elegido.valor * unidades)
-    }
 }
 let lista_muebles = [];
 
@@ -57,7 +54,6 @@ if (solicitar == "si") {
 } else if (solicitar == "no") {
     alert("Gracias por visitarnos!!");
 }
-let producto_elegido
 
 while (solicitar != "no") {
     if (elegir_producto == "1" || elegir_producto == "2" || elegir_producto == "3" || elegir_producto == "4") {
@@ -67,21 +63,19 @@ while (solicitar != "no") {
         descuento = muebles(producto_elegido.valor, usuario) * unidades;
     } break
 }
-let total_a_pagar = producto_elegido.valor + descuento;
+let costo_total = producto_elegido.valor * unidades;
+let costo_final = costo_total - descuento;
 
 if (unidades < producto_elegido.stock && usuario == "registrado" || elegir_producto == "1" && elegir_producto == "2" && elegir_producto == "3" && elegir_producto == "4") {
     console.log("Usted quiere:", unidades, "unidades");
-    producto_elegido.costo_total();
+    console.log("El costo total es de:", costo_total)
     console.log("Tiene un descuento de:", descuento, "por estar registrado.");
-    console.log("El total a pagar con descuento es de:", total_a_pagar)
+    console.log("Total a pagar con descuento es:", costo_final)
     producto_elegido.get_stock();
 
 } else if (unidades > producto_elegido.stock) {
     console.log("No se puede hacer la compra. No contamos con la cantidad solicitada.");
 } else if (usuario == "no registrado") {
-    producto_elegido.costo_total();
+    console.log("El costo total es de:", costo_total)
     console.log("No posee descuento.")
 }
-
-
-
