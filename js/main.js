@@ -1,81 +1,96 @@
-function muebles(precio, usuario) {
-    if (usuario == "registrado") {
-        let costo_mueble = precio * 0.25;
-        return costo_mueble;
-    }
-    else if (usuario == "no registrado") {
-        let costo_mueble_not = precio;
-        return costo_mueble_not;
-    }
-}
 
 class Caracteristicas_muebles {
-    constructor(categoria, nombre, valor, stock) {
+    constructor(categoria, nombre, valor, img) {
         this.categoria = categoria;
         this.nombre = nombre;
         this.valor = valor;
-        this.stock = stock;
-    }
-    get_datos() {
-        console.log("Categoria:", this.categoria);
-        console.log("Producto:", this.nombre);
-        console.log("Precio:", this.valor);
-        console.log("Stock:", this.stock);
-    }
-    get_stock() {
-        console.log("Quedan:", this.stock - unidades, "unidades")
+        this.img = img;
     }
 }
 let lista_muebles = [];
 
-lista_muebles.push(new Caracteristicas_muebles(1, "Escritorio", 25000, 8));
-lista_muebles.push(new Caracteristicas_muebles(2, "Mesa ratona", 10500, 12));
-lista_muebles.push(new Caracteristicas_muebles(3, "Juego de living", 14500, 13))
-lista_muebles.push(new Caracteristicas_muebles(4, "Rack Tv", 22500, 18));
+lista_muebles.push(new Caracteristicas_muebles(1, "Escritorio", 25000, "./imagenes/escritorio.webp"));
+lista_muebles.push(new Caracteristicas_muebles(2, "Mesa ratona", 10500, "./imagenes/ratona.webp"));
+lista_muebles.push(new Caracteristicas_muebles(3, "Juego de living", 14500, "./imagenes/juegoliving.jpg"))
+lista_muebles.push(new Caracteristicas_muebles(4, "Rack Tv", 22500, "./imagenes/rack.webp"));
 
+let contenedor_productos = document.getElementById('productos')
 
-console.log("Bienvenido a IronSpot")
-let usuario = prompt("Bienvenido a IronSpot ¿Estas registrado(registrado, no registrado)? Si lo estas obtenes un 25% de descuento en la compra.");
-
-while (usuario != "registrado" && usuario != "no registrado") {
-    alert("¡No válido!");
-    usuario = prompt("Ingrese si esta registrado:");
+function render_productos(producto) {
+    let articulo = document.createElement('div');
+    articulo.innerHTML = `
+                                <img src="${producto.img}" class=" img-fluid img_producto">
+                                    <div class="div_main">
+                                        <h4 class="cat_producto">${producto.categoria}</h4>
+                                            <h5 class="name_producto">${producto.nombre}</h5>
+                                            <h5 class="valor_produ">${producto.valor}$</h5>
+                                            <button class="btn_agregar btn btn-success">¡Lo quiero!</button>
+                                    </div>
+                            `
+    contenedor_productos.append(articulo)
 }
 
-let solicitar = prompt("¿Desea realizar alguna compra?(si o no)");
-let elegir_producto
-while (solicitar != "si" && solicitar != "no") {
-    alert("Ingrese si o no");
-    solicitar = prompt("¿Desea realizar alguna compra?(si o no)");
+lista_muebles.forEach(render_productos);
+
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+const guardado_storage = () => {
+    localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
-if (solicitar == "si") {
-    elegir_producto = parseInt(prompt("Elija el producto que desea(numero): 1)-Escritorio - 2)-Mesa ratona - 3)-Juego de living - 4)-Rack Tv:"));
-} else if (solicitar == "no") {
-    alert("Gracias por visitarnos!!");
+function agregar_producto(e) {
+    let agregar = e.target;
+    let categoria_producto = agregar.parentElement.querySelector(".cat_producto").textContent;
+    let nombre_producto = agregar.parentElement.querySelector(".name_producto").textContent;
+    let valor_producto = agregar.parentElement.querySelector(".valor_produ").textContent;
+    let imagen_producto = agregar.parentElement.parentElement.querySelector("img").src;
+
+    let producto_elegido = { categoria: categoria_producto, nombre: nombre_producto, valor: valor_producto, img: imagen_producto, cantidad: 1 };
+    carrito.push(producto_elegido);
+    mostrar_carrito();
+    guardado_storage();
+}
+let btn_agregar = document.querySelectorAll(".btn_agregar");
+console.log(btn_agregar)
+
+for (let boton of btn_agregar) {
+    boton.addEventListener("click", agregar_producto)
 }
 
-while (solicitar != "no") {
-    if (elegir_producto == "1" || elegir_producto == "2" || elegir_producto == "3" || elegir_producto == "4") {
-        producto_elegido = lista_muebles.find(function (prod) { return prod.categoria == elegir_producto });
-        producto_elegido.get_datos();
-        unidades = parseInt(prompt("¿Cuantas unidades quieres?:"));
-        descuento = muebles(producto_elegido.valor, usuario) * unidades;
-    } break
-}
-let costo_total = producto_elegido.valor * unidades;
-let costo_final = costo_total - descuento;
+function mostrar_carrito() {
+    let tabla = document.getElementById("carrito");
+    tabla.innerHTML = "";
+    for (let producto_elegido of carrito) {
+        let fila = document.createElement("tr");
+        fila.innerHTML = `<td><img src="${producto_elegido.img}" width="100px"></td>
+                            <td><p>${producto_elegido.nombre}</p></td>
+                            <td><span>Cantidad</span>${producto_elegido.cantidad}</td>
+                            <td><span>Precio</span>${producto_elegido.valor}</td>
+                            <td><button class="btn btn-danger eliminar_producto">X</button></td>`
+        tabla.append(fila)
 
-if (unidades < producto_elegido.stock && usuario == "registrado" || elegir_producto == "1" && elegir_producto == "2" && elegir_producto == "3" && elegir_producto == "4") {
-    console.log("Usted quiere:", unidades, "unidades");
-    console.log("El costo total es de:", costo_total)
-    console.log("Tiene un descuento de:", descuento, "por estar registrado.");
-    console.log("Total a pagar con descuento es:", costo_final)
-    producto_elegido.get_stock();
-
-} else if (unidades > producto_elegido.stock) {
-    console.log("No se puede hacer la compra. No contamos con la cantidad solicitada.");
-} else if (usuario == "no registrado") {
-    console.log("El costo total es de:", costo_total)
-    console.log("No posee descuento.")
+    }
+    let btn_eliminar = document.querySelectorAll(".eliminar_producto");
+    for (let boton of btn_eliminar) {
+        boton.addEventListener("click", borrar_elemento);
+    }
 }
+
+
+function borrar_elemento(e) {
+    let borrar = e.target.parentElement.parentElement;
+    let producto_a_eliminar = borrar.querySelector("p").textContent;
+
+    function borrar_produ(elemento) {
+        return elemento.nombre != producto_a_eliminar;
+    }
+
+    let elemento_borrado = carrito.filter(borrar_produ);
+    carrito = elemento_borrado;
+    mostrar_carrito()
+}
+
+
+
+
+
+
