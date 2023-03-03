@@ -11,7 +11,7 @@ let lista_muebles = [];
 
 lista_muebles.push(new Caracteristicas_muebles(1, "Escritorio", 25000, "./imagenes/escritorio.webp"));
 lista_muebles.push(new Caracteristicas_muebles(2, "Mesa ratona", 10500, "./imagenes/ratona.webp"));
-lista_muebles.push(new Caracteristicas_muebles(3, "Juego de living", 14500, "./imagenes/juegoliving.jpg"))
+lista_muebles.push(new Caracteristicas_muebles(3, "Juego", 14500, "./imagenes/juegoliving.jpg"))
 lista_muebles.push(new Caracteristicas_muebles(4, "Rack Tv", 22500, "./imagenes/rack.webp"));
 
 let contenedor_productos = document.getElementById('productos')
@@ -61,11 +61,12 @@ function mostrar_carrito() {
     tabla.innerHTML = "";
     for (let producto_elegido of carrito) {
         let fila = document.createElement("tr");
-        fila.innerHTML = `<td><img src="${producto_elegido.img}" width="100px"></td>
+        fila.innerHTML = `<div class="carrito_productos"><td><img src="${producto_elegido.img}" width="100px"></td>
                             <td><p>${producto_elegido.nombre}</p></td>
-                            <td><span>Cantidad</span>${producto_elegido.cantidad}</td>
-                            <td><span>Precio</span>${producto_elegido.valor}</td>
-                            <td><button class="btn btn-danger eliminar_producto">X</button></td>`
+                            <td><span>Cantidad </span>${producto_elegido.cantidad}</td>
+                            <td><span>Precio </span>${producto_elegido.valor}</td>
+                            <td><button class="btn btn-danger eliminar_producto">X</button></td>
+                            </div>`
         tabla.append(fila)
 
     }

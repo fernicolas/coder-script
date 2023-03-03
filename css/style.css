@@ -24,11 +24,15 @@
     width: 600px;
     height: 300px;
 }
-.productos{
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 20px;
-    align-items: center;
-  flex-direction: row;    
+#productos{
+  gap:20px;
+  text-align: center;
 }
-
+.carro{
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 50px;
+  color: whitesmokeS;
+}
