@@ -60,7 +60,7 @@ traer_productos().then((productos) => {
             let fila = document.createElement("tr");
             fila.innerHTML = `
             <tr class="carrito"><div class="carrito_productos">
-            <td><img src="${producto.img}" width="100px"></td>
+            <td><img class="img-fluid" src="${producto.img}" width="100px"></td>
             <td><p>${producto.nombre}</p></td>
             <td><span class="unidades">Cantidad: ${producto.cantidad}</span></td>
             <td><span>Precio: ${producto.valor} </span></td >
@@ -76,7 +76,13 @@ traer_productos().then((productos) => {
         for (let boton of btn_eliminar) {
             boton.addEventListener("click", borrar_elemento);
         }
+        const cerrar_carrito = document.getElementById("btn_cerrar_carrito");
+        cerrar_carrito.addEventListener("click", () => {
+            tabla.style.display = "none";
+
+        })
     }
+
 
     function guardar_carrito() {
         localStorage.setItem("carrito", JSON.stringify(carrito));

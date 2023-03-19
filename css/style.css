@@ -17,6 +17,8 @@
   
   body {
     background-color:#444444;
+    background-image: url(../imagenes/fondo2.jpg);
+
   }
 
   header {
@@ -42,7 +44,7 @@ nav img{
   text-decoration: underline;
   padding: 50px;
   text-align: center;
-  color: #EDEDED;
+  color:white;
   font-size: 25px;
 }
 #carrito{
@@ -73,14 +75,16 @@ nav img{
 
 }
 .pago{
-  background-color:#D6D5A8;
+  background-color:black;
   justify-content: space-between;
   display: flex;
   align-items: center;
   flex-direction: column;
   height: auto;
-  color: black;
-  gap: 10px
+  color: white;
+  gap: 10px;
+  width: 25%;
+
 }
 
 .productos_card{
@@ -130,4 +134,22 @@ tr{
   gap: 10px;
   align-items: baseline;
   justify-content: space-around;
+}
+.display_carrito{
+  display: inline;
+}
+.header_carrito{
+  width: 100%;
+display: flex;
+justify-content: space-between;
+padding: 10px;
+
+}
+section{
+  display: flex;
+justify-content: center;
+}
+.footer_carrito{
+  display: flex;
+gap: 150px;
 }
