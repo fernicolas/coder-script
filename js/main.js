@@ -18,7 +18,7 @@ traer_productos().then((productos) => {
                 <h4 class="cat_producto">${producto.categoria}</h4>
                     <h5 class="name_producto">${producto.nombre}</h5>
                     <h5 class="valor_produ">${producto.precio}$</h5>
-                    <button class="btn_agregar btn btn-success">¡Lo quiero!</button>
+                    <button class="btn_agregar btn btn-dark p-3 m-3">🛒</button>
             </div>
             </div>`
     })
@@ -29,6 +29,7 @@ traer_productos().then((productos) => {
     for (let boton of boton_agregar) {
         boton.addEventListener("click", agregar_producto);
     }
+    actualizar_cantidad_carrito();
 
     //--------------------------AGREGAR AL CARRITO----------------------------//
     function agregar_producto(e) {
@@ -60,7 +61,7 @@ traer_productos().then((productos) => {
             let fila = document.createElement("tr");
             fila.innerHTML = `
             <tr class="carrito"><div class="carrito_productos">
-            <td><img class="img-fluid" src="${producto.img}" width="100px"></td>
+            <td><img class="img_carro" src="${producto.img}"></td>
             <td><p>${producto.nombre}</p></td>
             <td><span class="unidades">Cantidad: ${producto.cantidad}</span></td>
             <td><span>Precio: ${producto.valor} </span></td >
@@ -76,11 +77,11 @@ traer_productos().then((productos) => {
         for (let boton of btn_eliminar) {
             boton.addEventListener("click", borrar_elemento);
         }
-        const cerrar_carrito = document.getElementById("btn_cerrar_carrito");
+        /*const cerrar_carrito = document.getElementById("btn_cerrar_carrito");
         cerrar_carrito.addEventListener("click", () => {
             tabla.style.display = "none";
 
-        })
+        })*/
     }
 
 
@@ -153,6 +154,11 @@ traer_productos().then((productos) => {
 
     function comprar() {
         if (carrito.length != 0) {
+            carrito = []
+            window.localStorage.clear()
+            carrito_abrir();
+            carrito_total();
+            actualizar_cantidad_carrito();
             Swal.fire({
                 title: 'Confirmar compra',
                 text: '¿Está seguro de que desea realizar la compra?',

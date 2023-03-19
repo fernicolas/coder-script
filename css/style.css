@@ -39,21 +39,18 @@
 nav img{
   width: 80px;
   cursor: pointer;
+  position: fixed;
+  top: 30px;
+  right: 0;
 }
-.info_pag{
-  text-decoration: underline;
-  padding: 50px;
-  text-align: center;
-  color:white;
-  font-size: 25px;
-}
+
 #carrito{
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 #cantidad_carrito {
-  position: absolute;
+  position: fixed;
   background-color: red;
   color: white;
   border-radius: 50%;
@@ -61,7 +58,8 @@ nav img{
   height: 20px;
   font-size: 12px;
   text-align: center;
-  line-height: 20px;
+  line-height: 18px;
+  top: 25px;
 }
 
 #productos{
@@ -84,6 +82,7 @@ nav img{
   color: white;
   gap: 10px;
   width: 25%;
+  margin: 20px;
 
 }
 
@@ -95,7 +94,7 @@ padding: 30px;
 border-radius: 20px;
 border: solid 2px grey;
 box-shadow:  7px 7px 7px rgba(0, 0, 0, 0.2);
-color: #EDEDED;
+color:black;
 }
 
 .img_producto {
@@ -152,4 +151,40 @@ justify-content: center;
 .footer_carrito{
   display: flex;
 gap: 150px;
+padding: 8px;
+}
+
+footer img{
+  width: 50px;
+}
+.footer_redes{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.footer__logoredes{
+  display: flex;
+gap: 20px;
+justify-content: center;
+padding: 10px;
+}
+td{
+  text-align: center;
+}
+.img_carro{
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+.text_foo{
+  display: flex;
+justify-content: center;
+color: white;
+font-size: 20px;
+
+}
+.footer__span{
+  color: white;
+  justify-content: center;
+  display: flex;
 }
