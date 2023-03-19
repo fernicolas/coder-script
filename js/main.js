@@ -58,7 +58,8 @@ traer_productos().then((productos) => {
         tabla.innerHTML = "";
         for (let producto of carrito) {
             let fila = document.createElement("tr");
-            fila.innerHTML = `<tr class="carrito"><div class="carrito_productos">
+            fila.innerHTML = `
+            <tr class="carrito"><div class="carrito_productos">
             <td><img src="${producto.img}" width="100px"></td>
             <td><p>${producto.nombre}</p></td>
             <td><span class="unidades">Cantidad: ${producto.cantidad}</span></td>
@@ -68,6 +69,7 @@ traer_productos().then((productos) => {
             tabla.append(fila);
             carrito_total()
             actualizar_cantidad_carrito();
+            guardar_carrito()
 
         }
         let btn_eliminar = document.querySelectorAll(".eliminar_producto");
@@ -121,7 +123,9 @@ traer_productos().then((productos) => {
         }
         let carrito_menos = carrito.filter(eliminar_producto);
         carrito = carrito_menos;
+        carrito_total();
         carrito_abrir();
+        actualizar_cantidad_carrito()
         Toastify({
             text: "Producto eliminado",
             duration: 900,
@@ -142,7 +146,6 @@ traer_productos().then((productos) => {
 
 
     function comprar() {
-        let total_compra = parseFloat(document.getElementById("total_precio_carrito").textContent);
         if (carrito.length != 0) {
             Swal.fire({
                 title: 'Confirmar compra',

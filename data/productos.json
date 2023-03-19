@@ -31,60 +31,60 @@
 },
 {
     "categoria": "06",
-    "nombre": "Escritorio",
-    "precio":"50000",
+    "nombre": "Mesa de luz",
+    "precio":"12500",
     "img":"./imagenes/escritorio.webp"
 },
 {
     "categoria": "07",
-    "nombre": "Escritorio",
-    "precio":"50000",
+    "nombre": "Juego de living",
+    "precio":"105000",
     "img":"./imagenes/escritorio.webp"
 },
 {
     "categoria": "08",
-    "nombre": "Escritorio",
-    "precio":"50000",
+    "nombre": "Juego de exterior",
+    "precio":"14000",
     "img":"./imagenes/escritorio.webp"
 },
 {
     "categoria": "09",
-    "nombre": "Escritorio",
-    "precio":"50000",
+    "nombre": "Mesa ratona chica",
+    "precio":"22000",
     "img":"./imagenes/escritorio.webp"
 },
 {
     "categoria": "10",
-    "nombre": "Escritorio",
-    "precio":"50000",
+    "nombre": "Estanteria",
+    "precio":"85000",
     "img":"./imagenes/escritorio.webp"
 },{
     "categoria": "11",
-    "nombre": "Escritorio",
-    "precio":"50000",
+    "nombre": "Reposeras",
+    "precio":"36000",
     "img":"./imagenes/escritorio.webp"
 },{
     "categoria": "12",
-    "nombre": "Escritorio",
-    "precio":"50000",
+    "nombre": "Sillón de hierro y madera",
+    "precio":"28000",
     "img":"./imagenes/escritorio.webp"
 },
 {
     "categoria": "13",
-    "nombre": "Escritorio",
-    "precio":"50000",
+    "nombre": "Mesa recibidora",
+    "precio":"15200",
     "img":"./imagenes/escritorio.webp"
 },
 {
     "categoria": "14",
-    "nombre": "Escritorio",
-    "precio":"50000",
+    "nombre": "Vajillero",
+    "precio":"58000",
     "img":"./imagenes/escritorio.webp"
 },
 {
     "categoria": "15",
-    "nombre": "Escritorio",
-    "precio":"50000",
+    "nombre": "Bajo mesada(Puerta Granero)",
+    "precio":"72000",
     "img":"./imagenes/escritorio.webp"
 }
 

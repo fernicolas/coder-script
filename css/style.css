@@ -36,6 +36,7 @@
 }
 nav img{
   width: 80px;
+  cursor: pointer;
 }
 .info_pag{
   text-decoration: underline;
@@ -119,3 +120,14 @@ color: #EDEDED;
   .footer{
     background-color:black;
   }
+.eliminar_producto {
+  font-size: 10px;
+
+}
+
+tr{
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  justify-content: space-around;
+}
