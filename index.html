@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -11,24 +12,84 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./css/style.css" />
-    <title>Document</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <title>Ironspot|Estilo industrial</title>
   </head>
   <body>
-    <header>
-      <h1 id="encabezado" class="fs-1 text-center">Binvenidos a Ironspot</h1>
+    <header class="navbar navbar-expand-lg p-3">
+      <div class="container-fluid">
+        <h1><img src="./imagenes/logiron.png" alt="" /></h1>
+        <nav
+          class="navegacion__inicio collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <div>
+            <img id="btn_abrir_carrito" src="./imagenes/carrito.png" alt="" />
+            <span id="cantidad_carrito">0</span>
+          </div>
+        </nav>
+      </div>
     </header>
+    <main>
+      <div class="info_pag">
+        <p>
+          Diseñamos y fabricamos muebles de hierro y madera a precios accesibles
+          para que tu hogar u oficina tenga el estilo que buscas.
+        </p>
+      </div>
+      <div id="productos"></div>
+      <section class="pago">
+        <div id="carrito" class="carro p-3"></div>
+        <div id="total_precio_carrito">Total a pagar</div>
+        <button id="btn_compra">Comprar</button>
+      </section>
+    </main>
+    <!----<footer class="footer">
+      <div class="footer__redes">
+        <span class="footer__span">Seguinos en:</span>
+        <div class="footer__logoredes">
+          <a href="https://www.instagram.com/">
+            <img src="./img/logoti" alt="logo instagram"
+          /></a>
+          <a href="https://www.facebook.com/"
+            ><img src="./img/facebook.png" alt="logo facebook"
+          /></a>
+          <a href="https://twitter.com/"
+            ><img src="./imagenes/twitter.png" alt="logo twitter"
+          /></a>
+          <a href="https://www.youtube.com/"
+            ><img src="./img/youtube.png" alt="logo youtube"
+          /></a>
+        </div>
+      </div>
 
-    <nav></nav>
+      <div class="footer__enlaces">
+        <span class="footer__span">Enlaces de utilidad</span>
+        <i>Politicas de privacidad</i>
+        <i>Cambios y devoluciones</i>
+        <i>Preguntas frecuentes</i>
+      </div>
 
-    <div id="productos" class="d-flex justify-content-between"></div>
-
-    <div id="carrito" class="carro p-3">
-      <h3>Carrito:</h3>
-      <div id="unidades"></div>
-      <div></div>
-    </div>
-
-    <footer></footer>
+      <div class="footer__ayuda">
+        <span class="footer__span">Ayuda y contacto</span>
+        <i>Llamanos al 0000000</i>
+        <i>Escribenos</i>
+        <i>Servicio de atención al cliente</i>
+      </div>
+    </footer>-->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script src="sweetalert2.all.min.js"></script>
     <script src="./js/main.js"></script>
   </body>
 </html>

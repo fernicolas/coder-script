@@ -3,7 +3,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Keania One", cursive "Kenia" cursive, "Ranga", cursive;
+    font-family:Kenia, Verdana, Geneva, Tahoma, sans-serif ;
   }
   
   ul li {
@@ -16,23 +16,106 @@
   }
   
   body {
-    background-color: #e6d7d7;
+    background-color:#444444;
   }
-  
 
+  header {
+    background-color:#000000;
+    width: auto;
+  }
+  h1 img{
+    height:80px;
+    width: 160px;
+  }
+.navegacion_inicio{
+  display: flex;
+}
 .img_producto{
     width: 600px;
     height: 300px;
 }
-#productos{
-  gap:20px;
-  text-align: center;
+nav img{
+  width: 80px;
 }
-.carro{
+.info_pag{
+  text-decoration: underline;
+  padding: 50px;
+  text-align: center;
+  color: #EDEDED;
+  font-size: 25px;
+}
+#carrito{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+#cantidad_carrito {
+  position: absolute;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 20px;
+}
+
+#productos{
+  text-align: center;
+  padding: 20px 20px;
   gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  justify-items: center;
+
+}
+.pago{
+  background-color:#D6D5A8;
+  justify-content: space-between;
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 50px;
-  color: whitesmokeS;
+  height: auto;
+  color: black;
+  gap: 10px
 }
+
+.productos_card{
+  width: 350px;
+  height: auto;
+  background-color: grey;
+padding: 30px;
+border-radius: 20px;
+border: solid 2px grey;
+box-shadow:  7px 7px 7px rgba(0, 0, 0, 0.2);
+color: #EDEDED;
+}
+
+.img_producto {
+  width: 300px;
+  height: 300px;
+  border-radius: 50px;
+}
+
+
+  .productos_card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+    filter: opacity(0.9);
+  }
+
+  #total_precio_carrito{
+    border-radius: 10px;
+    border: solid 2px grey;
+    background-color: black;
+    color: #EDEDED;
+  }
+  .btn_compra{
+    size:100px
+  }
+
+  .footer{
+    background-color:black;
+  }

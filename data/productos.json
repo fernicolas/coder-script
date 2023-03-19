@@ -1,0 +1,91 @@
+[
+{
+    "categoria": "01",
+    "nombre": "Escritorio",
+    "precio": "50000",
+    "img":"./imagenes/escritorio.webp"
+},
+{
+    "categoria": "02",
+    "nombre": "Rack Tv",
+    "precio": "38000",
+    "img":"./imagenes/rack.webp"
+},
+{
+    "categoria": "03",
+    "nombre": "Mesa ratona",
+    "precio": "30000",
+    "img":"./imagenes/ratona.webp"
+},
+{
+    "categoria": "04",
+    "nombre": "Sillón individual",
+    "precio":"25000",
+    "img":"./imagenes/sillon_individual.jpg"
+},
+{
+    "categoria": "05",
+    "nombre": "Sillón dos cuerpos",
+    "precio":"45000",
+    "img":"./imagenes/sillon_doscuerpos.jpg"
+},
+{
+    "categoria": "06",
+    "nombre": "Escritorio",
+    "precio":"50000",
+    "img":"./imagenes/escritorio.webp"
+},
+{
+    "categoria": "07",
+    "nombre": "Escritorio",
+    "precio":"50000",
+    "img":"./imagenes/escritorio.webp"
+},
+{
+    "categoria": "08",
+    "nombre": "Escritorio",
+    "precio":"50000",
+    "img":"./imagenes/escritorio.webp"
+},
+{
+    "categoria": "09",
+    "nombre": "Escritorio",
+    "precio":"50000",
+    "img":"./imagenes/escritorio.webp"
+},
+{
+    "categoria": "10",
+    "nombre": "Escritorio",
+    "precio":"50000",
+    "img":"./imagenes/escritorio.webp"
+},{
+    "categoria": "11",
+    "nombre": "Escritorio",
+    "precio":"50000",
+    "img":"./imagenes/escritorio.webp"
+},{
+    "categoria": "12",
+    "nombre": "Escritorio",
+    "precio":"50000",
+    "img":"./imagenes/escritorio.webp"
+},
+{
+    "categoria": "13",
+    "nombre": "Escritorio",
+    "precio":"50000",
+    "img":"./imagenes/escritorio.webp"
+},
+{
+    "categoria": "14",
+    "nombre": "Escritorio",
+    "precio":"50000",
+    "img":"./imagenes/escritorio.webp"
+},
+{
+    "categoria": "15",
+    "nombre": "Escritorio",
+    "precio":"50000",
+    "img":"./imagenes/escritorio.webp"
+}
+
+]
