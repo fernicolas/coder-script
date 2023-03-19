@@ -142,10 +142,8 @@ traer_productos().then((productos) => {
 
 
     function comprar() {
-        let total_compra = parseFloat(document.getElementById("total_precio_carrito").textContent.replace("$", ""));
-        if (total_compra > 0) {
-            carrito = []
-
+        let total_compra = parseFloat(document.getElementById("total_precio_carrito").textContent);
+        if (carrito.length != 0) {
             Swal.fire({
                 title: 'Confirmar compra',
                 text: '¿Está seguro de que desea realizar la compra?',
